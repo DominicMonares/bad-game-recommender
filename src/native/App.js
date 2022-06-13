@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, StyleSheet, View} from 'react-native';
+import {
+  Image,
+  SafeAreaView,
+  StyleSheet,
+  View
+} from 'react-native';
 
+import bgr_logo from '../shared/assets/bgr-logo.png';
 import fetchGameData from '../shared/services/gameData';
 
 const App = () => {
@@ -17,6 +23,7 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <Image style={styles.logo} source={bgr_logo} />
 
     </SafeAreaView>
   );
@@ -25,6 +32,10 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1
+  },
+  logo: {
+    resizeMode: 'contain',
+    width: '50%',
   }
 });
 
