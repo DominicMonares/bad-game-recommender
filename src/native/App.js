@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 import bgr_logo from '../shared/assets/bgr-logo.png';
-import Game from './components/Game.js';
+import Game from './components/Game/Game.js';
 import PageButtons from './components/PageButtons.js';
 import fetchGameData from '../shared/services/gameData';
 
