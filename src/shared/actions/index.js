@@ -12,4 +12,4 @@ const updateGames = (games) => {
   }
 }
 
-export { updatePage, updateGames }
+export { updatePage, updateGames };
