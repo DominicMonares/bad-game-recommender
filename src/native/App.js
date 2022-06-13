@@ -9,8 +9,8 @@ import {
 } from 'react-native';
 
 // Redux
-import { Provider, useSelector, useDispatch } from 'react-redux';
 import store from '../shared/store'
+import { Provider, useSelector, useDispatch } from 'react-redux';
 import { updateGames } from '../shared/actions/index.js';
 
 // Components
