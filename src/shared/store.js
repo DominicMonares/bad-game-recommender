@@ -3,8 +3,10 @@ import thunk from 'redux-thunk';
 
 import reducers from './reducers/index';
 
-export const store = createStore(
+const store = createStore(
   reducers,
   {page: 1, games: []},
   applyMiddleware(thunk)
 )
+
+export default store;
