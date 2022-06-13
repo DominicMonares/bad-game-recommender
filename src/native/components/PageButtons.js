@@ -1,8 +1,14 @@
 import React from 'react';
 import { Button, View } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
 
-const PageButtons = (props) => {
-  if (props < 5) {
+import { updatePage } from '../shared/actions/index.js';
+
+const PageButtons = () => {
+  const page = useSelector(state => state.page);
+  const dispatch = useDispatch();
+
+  if (page < 5) {
     return (
       <View>
         <Button
@@ -26,23 +32,23 @@ const PageButtons = (props) => {
     return (
       <View>
         <Button
-          title={props.page}
+          title={page}
         />
         <Button
-          title={props.page + 1}
+          title={page + 1}
         />
         <Button
-          title={props.page + 2}
+          title={page + 2}
         />
         <Button
-          title={props.page + 3}
+          title={page + 3}
         />
         <Button
-          title={props.page + 4}
+          title={page + 4}
         />
       </View>
     )
   }
 }
 
-export default Game;
+export default PageButtons;
