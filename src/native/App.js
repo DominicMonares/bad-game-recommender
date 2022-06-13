@@ -27,8 +27,7 @@ const App: () => Node = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: 'grey'
+    flex: 1
   },
   response: {
     textAlign: 'center',
