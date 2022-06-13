@@ -1,13 +1,15 @@
-export const updatePage = (page) => {
+const updatePage = (page) => {
   return {
     type: 'updatePage',
     payload: page
   }
 }
 
-export const updateGames = (games) => {
+const updateGames = (games) => {
   return {
     type: 'updateGames',
     payload: games
   }
 }
+
+export { updatePage, updateGames }
