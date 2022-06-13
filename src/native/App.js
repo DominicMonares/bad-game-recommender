@@ -47,7 +47,9 @@ const styles = StyleSheet.create({
   logo: {
     resizeMode: 'contain',
     width: '50%',
-    height: '20%'
+    height: '20%',
+    marginLeft: 'auto',
+    marginRight: 'auto'
   }
 });
 
