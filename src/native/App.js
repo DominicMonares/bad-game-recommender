@@ -1,5 +1,4 @@
-// React | React-Native
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   FlatList,
   Image,
@@ -8,33 +7,18 @@ import {
   View
 } from 'react-native';
 
-// Redux
-import store from '../shared/store'
-import { Provider, useSelector, useDispatch } from 'react-redux';
-import { updateGames } from '../shared/actions/index.js';
-
-// Components
 import bgr_logo from '../shared/assets/bgr-logo.png';
-import Game from './components/Game';
-import PageButtons from './components/PageButtons';
-
+import Game from './components/Game.js';
+import PageButtons from './components/PageButtons.js';
 import fetchGameData from '../shared/services/gameData';
 
-const AppWrapper = () => {
-  return (
-    <Provider store={store}>
-      <App />
-    </Provider>
-  )
-}
-
 const App = () => {
-  const state = useSelector(state => state);
-  const dispatch = useDispatch();
+  const [page, setPage] = useState(1);
+  const [games, setGames] = useState([]);
 
   useEffect(() => {
     const gameData = async () => {
-      dispatch(updateGames(await fetchGameData(state.page)));
+      setGames(await fetchGameData(page));
     }
 
     gameData();
@@ -44,10 +28,10 @@ const App = () => {
     <SafeAreaView style={styles.container}>
       <Image style={styles.logo} source={bgr_logo} />
       <FlatList
-        data={state.games}
+        data={games}
         renderItem={item => <Game game={item} />}
       />
-      <PageButtons />
+      <PageButtons page={page} />
     </SafeAreaView>
   );
 }
@@ -63,4 +47,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default AppWrapper;
+export default App;
