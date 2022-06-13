@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
+  FlatList,
   Image,
   SafeAreaView,
   StyleSheet,
@@ -7,6 +8,7 @@ import {
 } from 'react-native';
 
 import bgr_logo from '../shared/assets/bgr-logo.png';
+import Game from './components/Game.js';
 import fetchGameData from '../shared/services/gameData';
 
 const App = () => {
@@ -24,7 +26,10 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Image style={styles.logo} source={bgr_logo} />
-
+      <FlatList
+        data={games}
+        renderItem={item => <Game game={item} />}
+      />
     </SafeAreaView>
   );
 }
@@ -36,6 +41,7 @@ const styles = StyleSheet.create({
   logo: {
     resizeMode: 'contain',
     width: '50%',
+    height: '20%'
   }
 });
 
