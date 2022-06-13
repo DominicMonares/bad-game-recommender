@@ -3,6 +3,7 @@ import {
   FlatList,
   Image,
   SafeAreaView,
+  ScrollView,
   StyleSheet,
   View
 } from 'react-native';
@@ -26,28 +27,28 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Image style={styles.logo} source={bgr_logo} />
-      <FlatList
-        data={games}
-        renderItem={item => <Game game={item} />}
-      />
-      <PageButtons
-        page={page}
-        updatePage={setPage}
-        updateGames={setGames}
-      />
+      <ScrollView>
+        <Image style={styles.logo} source={bgr_logo} />
+        {games.map(g => { return <Game key={g.name} game={g} /> })}
+        <PageButtons
+          page={page}
+          updatePage={setPage}
+          updateGames={setGames}
+        />
+      </ScrollView>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   logo: {
+    flex: 1,
     resizeMode: 'contain',
-    width: '50%',
-    height: '20%',
+    width: 200,
+    height: 100,
     marginLeft: 'auto',
     marginRight: 'auto'
   }

@@ -6,20 +6,17 @@ const Cover = (props) => {
   const rating = props.rating;
 
   return (
-    <View style={styles.container}>
+    <View>
       <Image style={styles.cover} source={{uri: url}} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  // container: {
-  //   justifyContent: 'space'
-  // },
   cover: {
     resizeMode: 'contain',
-    width: '100%',
-    height: '100%'
+    width: 300,
+    height: 250
   }
 });
 

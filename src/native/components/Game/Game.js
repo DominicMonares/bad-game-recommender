@@ -4,7 +4,7 @@ import { Text, View } from 'react-native';
 import Cover from './Cover';
 
 const Game = (props) => {
-  const game = props.game.item;
+  const game = props.game;
   return (
     <View>
       <Cover url={game.cover_url} rating={game.rating} />
