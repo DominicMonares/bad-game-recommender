@@ -31,7 +31,11 @@ const App = () => {
         data={games}
         renderItem={item => <Game game={item} />}
       />
-      <PageButtons page={page} />
+      <PageButtons
+        page={page}
+        updatePage={setPage}
+        updateGames={setGames}
+      />
     </SafeAreaView>
   );
 }
