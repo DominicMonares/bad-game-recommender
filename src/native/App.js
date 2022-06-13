@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+// React | React-Native
+import React, { useEffect } from 'react';
 import {
   FlatList,
   Image,
@@ -7,17 +8,32 @@ import {
   View
 } from 'react-native';
 
+// Redux
+import { Provider, useSelector, useDispatch } from 'react-redux';
+import store from '../shared/store'
+import { updateGames } from '../shared/actions/index.js';
+
+// Components
 import bgr_logo from '../shared/assets/bgr-logo.png';
 import Game from './components/Game';
+
 import fetchGameData from '../shared/services/gameData';
 
+const AppWrapper = () => {
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  )
+}
+
 const App = () => {
-  const [page, setPage] = useState(1);
-  const [games, setGames] = useState([]);
+  const state = useSelector(state => state);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const gameData = async () => {
-      setGames(await fetchGameData(page));
+      dispatch(updateGames(await fetchGameData(state.page)));
     }
 
     gameData();
@@ -27,7 +43,7 @@ const App = () => {
     <SafeAreaView style={styles.container}>
       <Image style={styles.logo} source={bgr_logo} />
       <FlatList
-        data={games}
+        data={state.games}
         renderItem={item => <Game game={item} />}
       />
     </SafeAreaView>
@@ -45,4 +61,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default App;
+export default AppWrapper;
