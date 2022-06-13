@@ -16,6 +16,7 @@ import { updateGames } from '../shared/actions/index.js';
 // Components
 import bgr_logo from '../shared/assets/bgr-logo.png';
 import Game from './components/Game';
+import PageButtons from './components/PageButtons';
 
 import fetchGameData from '../shared/services/gameData';
 
@@ -46,6 +47,7 @@ const App = () => {
         data={state.games}
         renderItem={item => <Game game={item} />}
       />
+      <PageButtons />
     </SafeAreaView>
   );
 }
