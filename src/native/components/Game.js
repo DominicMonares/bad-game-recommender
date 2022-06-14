@@ -10,6 +10,7 @@ const Game = (props) => {
     <View style={styles.container}>
       <Cover style={styles.cover} url={game.cover_url} rating={game.rating} />
       <Text style={styles.title}>{game.name}</Text>
+      <Text style={styles.genres}>{game.genres.join(', ')}</Text>
     </View>
   )
 }
@@ -27,6 +28,11 @@ const styles = StyleSheet.create({
     fontSize: 25,
     textAlign: 'center',
     marginTop: 15
+  },
+  genres: {
+    fontFamily: 'Share Tech',
+    fontSize: 20,
+    textAlign: 'center'
   }
 });
 
