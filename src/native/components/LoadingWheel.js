@@ -12,7 +12,6 @@ const LoadingWheel = (props) => {
         transparent={true}
         visible={visible}
         onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
           toggle(!visible);
         }}
       >
