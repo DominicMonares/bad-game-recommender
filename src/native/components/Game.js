@@ -1,15 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import Cover from './Cover';
+import openBrowser from './Browser';
 
 const Game = (props) => {
   const game = props.game;
 
   return (
     <View style={styles.container}>
-      <Cover style={styles.cover} url={game.cover_url} rating={game.rating} />
-      <Text style={styles.title}>{game.name}</Text>
+      <Pressable onPress={() => {
+        openBrowser(game.url);
+      }}>
+        <Cover style={styles.cover} url={game.cover_url} rating={game.rating} />
+      </Pressable>
+      <Pressable onPress={() => {
+        openBrowser(game.url);
+      }}>
+        <Text style={styles.title}>{game.name}</Text>
+      </Pressable>
       <Text style={styles.genres}>{game.genres.join(', ')}</Text>
     </View>
   )
