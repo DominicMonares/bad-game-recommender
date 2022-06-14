@@ -3,6 +3,7 @@ import {
   FlatList,
   Image,
   ScrollView,
+  StatusBar,
   StyleSheet,
   View
 } from 'react-native';
@@ -27,6 +28,7 @@ const App = () => {
 
   return (
     <View style={styles.container}>
+      <StatusBar barStyle='light-content' />
       <Header />
       <ScrollView>
         <Image style={styles.logo} source={bgr_logo} />
