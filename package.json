@@ -28,6 +28,7 @@
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "eslint": "^8.17.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^28.1.1",
     "metro-react-native-babel-preset": "^0.71.1",
     "react-test-renderer": "17.0.2",
@@ -37,6 +38,12 @@
     "webpack-dev-server": "^4.9.2"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "moduleNameMapper": {
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!@react-native|react-native|native-base|react-clone-referenced-element)"
+   ]
   }
 }
