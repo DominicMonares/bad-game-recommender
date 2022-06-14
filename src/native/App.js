@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import {
   FlatList,
   Image,
-  SafeAreaView,
   ScrollView,
+  StatusBar,
   StyleSheet,
   View
 } from 'react-native';
 
 import bgr_logo from '../shared/assets/bgr-logo.png';
-import Game from './components/Game/Game.js';
+import Game from './components/Game.js';
 import PageButtons from './components/PageButtons.js';
 import fetchGameData from '../shared/services/gameData';
 
@@ -26,7 +26,8 @@ const App = () => {
   }, [])
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
+      <StatusBar backgroundColor="black" />
       <ScrollView>
         <Image style={styles.logo} source={bgr_logo} />
         {games.map(g => { return <Game key={g.name} game={g} /> })}
@@ -36,13 +37,16 @@ const App = () => {
           updateGames={setGames}
         />
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1
+  },
+  header: {
+    backgroundColor: 'black'
   },
   logo: {
     flex: 1,
