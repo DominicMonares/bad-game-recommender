@@ -62,3 +62,6 @@ buck-out/
 
 # Web Build
 src/web/client/dist/main.js
+
+# Testing
+coverage
