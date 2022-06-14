@@ -44,6 +44,6 @@
     },
     "transformIgnorePatterns": [
       "node_modules/(?!@react-native|react-native|native-base|react-clone-referenced-element)"
-   ]
+    ]
   }
 }
