@@ -64,7 +64,9 @@ const PageButtons = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginLeft: 'auto',
+    marginRight: 'auto'
   }
 })
 

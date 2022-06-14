@@ -42,7 +42,7 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   },
   logo: {
     flex: 1,
@@ -50,7 +50,9 @@ const styles = StyleSheet.create({
     width: 200,
     height: 100,
     marginLeft: 'auto',
-    marginRight: 'auto'
+    marginRight: 'auto',
+    marginBottom: 15,
+    marginTop: 15
   }
 });
 

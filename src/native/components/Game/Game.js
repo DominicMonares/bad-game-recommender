@@ -1,16 +1,33 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 import Cover from './Cover';
 
 const Game = (props) => {
   const game = props.game;
+
   return (
-    <View>
-      <Cover url={game.cover_url} rating={game.rating} />
-      <Text>{game.name}</Text>
+    <View style={styles.container}>
+      <Cover style={styles.cover} url={game.cover_url} rating={game.rating} />
+      <Text style={styles.title}>{game.name}</Text>
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    marginBottom: 20
+  },
+  cover: {
+    marginLeft: 'auto',
+    marginRight: 'auto'
+  },
+  title: {
+    fontFamily: 'Share Tech',
+    fontSize: 25,
+    textAlign: 'center',
+    marginTop: 5
+  }
+});
 
 export default Game;
