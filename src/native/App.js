@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   FlatList,
   Image,
@@ -17,6 +17,7 @@ import fetchGameData from '../shared/services/gameData';
 const App = () => {
   const [page, setPage] = useState(1);
   const [games, setGames] = useState([]);
+  const scrollRef = useRef();
 
   useEffect(() => {
     const gameData = async () => {
@@ -30,13 +31,14 @@ const App = () => {
     <View style={styles.container}>
       <StatusBar barStyle='light-content' />
       <Header />
-      <ScrollView>
+      <ScrollView ref={scrollRef}>
         <Image style={styles.logo} source={bgr_logo} />
         {games.map(g => { return <Game key={g.name} game={g} /> })}
         <PageButtons
           page={page}
           updatePage={setPage}
           updateGames={setGames}
+          scrollRef={scrollRef}
         />
       </ScrollView>
     </View>
