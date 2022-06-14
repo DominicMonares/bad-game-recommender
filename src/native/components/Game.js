@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: 'Share Tech',
+    textDecorationLine: 'underline',
     fontSize: 25,
     textAlign: 'center',
     marginTop: 15
