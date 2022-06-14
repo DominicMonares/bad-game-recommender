@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, StyleSheet, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import fetchGameData from '../../shared/services/gameData';
 
@@ -7,57 +7,54 @@ const PageButtons = (props) => {
   const page = props.page;
   const updatePage = props.updatePage;
   const updateGames = props.updateGames;
+  const updateDisplay = async (page) => {
+    updatePage(page);
+    updateGames(await fetchGameData(page));
+  }
 
   return (
     <View style={styles.container}>
-      <Button
-        title='<'
-        onPress={async () => {
-          if (page > 1) {
-            updatePage(page - 1);
-            updateGames(await fetchGameData(page - 1));
-          }
+      <Pressable
+        style={styles.button}
+        onPress={() => {
+          if (page > 1) { updateDisplay(page - 1) }
         }}
-      />
-      <Button
-        title={page.toString()}
-        // grey current button out
-      />
-      <Button
-        title={(page + 1).toString()}
-        onPress={async () => {
-          updatePage(page + 1);
-          updateGames(await fetchGameData(page + 1));
-        }}
-      />
-      <Button
-        title={(page + 2).toString()}
-        onPress={async () => {
-          updatePage(page + 2);
-          updateGames(await fetchGameData(page + 2));
-        }}
-      />
-      <Button
-        title={(page + 3).toString()}
-        onPress={async () => {
-          updatePage(page + 3);
-          updateGames(await fetchGameData(page + 3));
-        }}
-      />
-      <Button
-        title={(page + 4).toString()}
-        onPress={async () => {
-          updatePage(page + 4);
-          updateGames(await fetchGameData(page + 4));
-        }}
-      />
-      <Button
-        title='>'
-        onPress={async () => {
-          updatePage(page + 1);
-          updateGames(await fetchGameData(page + 1));
-        }}
-      />
+      >
+        <Text style={styles.page}>{'<'}</Text>
+      </Pressable>
+      <Pressable style={styles.currentButton}>
+        <Text style={styles.currentPage}>{page}</Text>
+      </Pressable>
+      <Pressable
+        style={styles.button}
+        onPress={async () => { updateDisplay(page + 1) }}
+      >
+        <Text style={styles.page}>{page + 1}</Text>
+      </Pressable>
+      <Pressable
+        style={styles.button}
+        onPress={async () => { updateDisplay(page + 2) }}
+      >
+        <Text style={styles.page}>{page + 2}</Text>
+      </Pressable>
+      <Pressable
+        style={styles.button}
+        onPress={async () => { updateDisplay(page + 3) }}
+      >
+        <Text style={styles.page}>{page + 3}</Text>
+      </Pressable>
+      <Pressable
+        style={styles.button}
+        onPress={async () => { updateDisplay(page + 4) }}
+      >
+        <Text style={styles.page}>{page + 4}</Text>
+      </Pressable>
+      <Pressable
+        style={styles.button}
+        onPress={async () => { updateDisplay(page + 1) }}
+      >
+        <Text style={styles.page}>{'>'}</Text>
+      </Pressable>
     </View>
   );
 }
@@ -65,8 +62,27 @@ const PageButtons = (props) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    marginLeft: 'auto',
-    marginRight: 'auto'
+    justifyContent: 'space-around',
+    marginBottom: 40
+  },
+  button: {
+    width: 40,
+  },
+  page: {
+    fontFamily: 'Share Tech',
+    fontSize: 25,
+    textAlign: 'center'
+  },
+  currentButton: {
+    backgroundColor: 'black',
+    borderRadius: 5,
+    width: 40,
+  },
+  currentPage: {
+    fontFamily: 'Share Tech',
+    fontSize: 25,
+    color: 'white',
+    textAlign: 'center',
   }
 })
 

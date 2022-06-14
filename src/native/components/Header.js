@@ -10,9 +10,9 @@ const Header = () => {
 const styles = StyleSheet.create({
   container: {
     height: 50,
-    backgroundColor: '#5b49e3',
+    backgroundColor: '#9f2cff',
     borderBottomWidth: 1,
-    borderColor: '#767676'
+    borderColor: '#5b49e3'
   }
 });
 

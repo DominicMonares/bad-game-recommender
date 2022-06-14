@@ -52,11 +52,11 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'contain',
     width: 200,
-    height: 100,
+    height: 119,
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginBottom: 19,
-    marginTop: 15
+    marginBottom: 44,
+    marginTop: 40
   }
 });
 

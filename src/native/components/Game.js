@@ -16,7 +16,7 @@ const Game = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    marginBottom: 20
+    marginBottom: 50
   },
   cover: {
     marginLeft: 'auto',
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Share Tech',
     fontSize: 25,
     textAlign: 'center',
-    marginTop: 5
+    marginTop: 15
   }
 });
 
