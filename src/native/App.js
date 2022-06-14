@@ -3,14 +3,14 @@ import {
   FlatList,
   Image,
   ScrollView,
-  StatusBar,
   StyleSheet,
   View
 } from 'react-native';
 
 import bgr_logo from '../shared/assets/bgr-logo.png';
-import Game from './components/Game.js';
-import PageButtons from './components/PageButtons.js';
+import Header from './components/Header';
+import Game from './components/Game';
+import PageButtons from './components/PageButtons';
 import fetchGameData from '../shared/services/gameData';
 
 const App = () => {
@@ -27,7 +27,7 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor="black" />
+      <Header />
       <ScrollView>
         <Image style={styles.logo} source={bgr_logo} />
         {games.map(g => { return <Game key={g.name} game={g} /> })}
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     height: 100,
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginBottom: 15,
+    marginBottom: 19,
     marginTop: 15
   }
 });
