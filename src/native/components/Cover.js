@@ -1,19 +1,24 @@
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 
+import Rating from './Rating';
+
 const Cover = (props) => {
   const url = props.url;
   const rating = props.rating;
 
   return (
-    <View style={styles.blContainer}>
-      <View style={styles.brContainer}>
-        <View style={styles.tlContainer}>
-          <View style={styles.trContainer}>
-            <Image
-              style={styles.cover}
-              source={{ uri: url }}
-            />
+    <View>
+      <Rating rating={rating} />
+      <View style={styles.blContainer}>
+        <View style={styles.brContainer}>
+          <View style={styles.tlContainer}>
+            <View style={styles.trContainer}>
+              <Image
+                style={styles.cover}
+                source={{ uri: url }}
+              />
+            </View>
           </View>
         </View>
       </View>
