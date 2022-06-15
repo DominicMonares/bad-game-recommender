@@ -13,7 +13,7 @@ const Game = (props) => {
       <Pressable onPress={() => {
         openBrowser(game.url);
       }}>
-        <Cover style={styles.cover} url={game.cover_url} rating={game.rating} />
+        <Cover url={game.cover_url} rating={game.rating} />
       </Pressable>
       <Pressable onPress={() => {
         openBrowser(game.url);
