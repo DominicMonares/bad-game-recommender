@@ -64,6 +64,7 @@ const PageButtons = (props) => {
         <Pressable
           style={styles.button}
           onPress={async () => { updateDisplay(page + 4) }}
+          testID="page_5"
         >
           <Text style={styles.page}>{page + 4}</Text>
         </Pressable>
