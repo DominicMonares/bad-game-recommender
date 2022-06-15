@@ -5,7 +5,7 @@
 import 'react-native';
 import React from 'react';
 import { create } from 'react-test-renderer';
-import { act } from '@testing-library/react-native';
+import { act, fireEvent, render, waitFor } from '@testing-library/react-native';
 
 import App from '../../src/native/App';
 import { logoStyle } from './sampleData'
@@ -16,10 +16,9 @@ describe('Native Tests', () => {
 
   describe('App', () => {
     it('renders App correctly', () => {
-      const component = create(<App />);
-      const tree = component.toJSON();
+      const { toJSON } = render(<App />);
+      const tree = toJSON();
       const logo = tree['children'][1]['children'][0]['children'][0];
-      console.log('LOGO ', logo)
 
       expect(tree.type).toBe('View');
       expect(tree.props.style).toStrictEqual({ flex: 1 });
@@ -27,8 +26,7 @@ describe('Native Tests', () => {
       expect(tree['children'][0]['type']).toBe('View');
       expect(tree['children'][1]['type']).toBe('RCTScrollView');
       expect(logo.type).toBe('Image');
-      expect(logo.props).toStrictEqual(logoStyle);
-
+      expect(logo.props.style).toStrictEqual(logoStyle);
     });
 
     // it('calls useEffect on App load', () => {
@@ -44,7 +42,7 @@ describe('Native Tests', () => {
     // });
   });
 
-
+  describe('')
 
 
 
