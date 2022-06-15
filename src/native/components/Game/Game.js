@@ -1,8 +1,8 @@
 import React from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
-import Cover from './Cover';
-import openBrowser from './Browser';
+import Cover from '../Cover/Cover';
+import openBrowser from '../Browser/Browser';
 
 const Game = (props) => {
   const game = props.game;

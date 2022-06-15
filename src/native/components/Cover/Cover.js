@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 
-import Rating from './Rating';
+import Rating from '../Rating/Rating';
 
 const Cover = (props) => {
   const url = props.url;

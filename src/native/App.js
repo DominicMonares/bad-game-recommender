@@ -9,9 +9,9 @@ import {
 } from 'react-native';
 
 import bgr_logo from '../shared/assets/bgr-logo.png';
-import Header from './components/Header';
-import Game from './components/Game';
-import PageButtons from './components/PageButtons';
+import Header from './components/Header/Header';
+import Game from './components/Game/Game';
+import PageButtons from './components/PageButtons/PageButtons';
 import fetchGameData from '../shared/services/gameData';
 
 const App = () => {

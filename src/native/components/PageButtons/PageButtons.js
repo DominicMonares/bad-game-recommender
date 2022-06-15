@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 import fetchGameData from '../../shared/services/gameData';
-import LoadingWheel from './LoadingWheel';
+import LoadingWheel from '../LoadingWheel/LoadingWheel';
 
 const PageButtons = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
