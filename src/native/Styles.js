@@ -4,9 +4,6 @@ export default StyleSheet.create({
   container: {
     flex: 1
   },
-  header: {
-    backgroundColor: 'black'
-  },
   logo: {
     flex: 1,
     resizeMode: 'contain',
