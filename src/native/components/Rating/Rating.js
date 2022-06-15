@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+
+import styles from './Styles';
 
 const Rating = (props) => {
   const rating = props.rating;
@@ -11,26 +13,5 @@ const Rating = (props) => {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'red',
-    width: 65,
-    height: 30,
-    right: 0,
-    marginRight: 75,
-    marginTop: 12,
-    zIndex: 1,
-    position: 'absolute'
-  },
-  rating: {
-    fontFamily: 'Share Tech',
-    fontSize: 20,
-    textAlign: 'center',
-    marginTop: 'auto',
-    marginBottom: 'auto',
-    color: 'white'
-  }
-});
 
 export default Rating;

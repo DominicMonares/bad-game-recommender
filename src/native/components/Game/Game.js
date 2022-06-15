@@ -1,8 +1,9 @@
 import React from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 
 import Cover from '../Cover/Cover';
 import openBrowser from '../Browser/Browser';
+import styles from './Styles';
 
 const Game = (props) => {
   const game = props.game;
@@ -23,27 +24,5 @@ const Game = (props) => {
     </View>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    marginBottom: 50
-  },
-  cover: {
-    marginLeft: 'auto',
-    marginRight: 'auto'
-  },
-  title: {
-    fontFamily: 'Share Tech',
-    textDecorationLine: 'underline',
-    fontSize: 25,
-    textAlign: 'center',
-    marginTop: 15
-  },
-  genres: {
-    fontFamily: 'Share Tech',
-    fontSize: 20,
-    textAlign: 'center'
-  }
-});
 
 export default Game;

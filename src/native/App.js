@@ -4,7 +4,6 @@ import {
   Image,
   ScrollView,
   StatusBar,
-  StyleSheet,
   View
 } from 'react-native';
 
@@ -13,6 +12,7 @@ import Header from './components/Header/Header';
 import Game from './components/Game/Game';
 import PageButtons from './components/PageButtons/PageButtons';
 import fetchGameData from '../shared/services/gameData';
+import styles from './Styles.js';
 
 const App = () => {
   const [page, setPage] = useState(1);
@@ -44,24 +44,5 @@ const App = () => {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-  header: {
-    backgroundColor: 'black'
-  },
-  logo: {
-    flex: 1,
-    resizeMode: 'contain',
-    width: 200,
-    height: 119,
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    marginBottom: 44,
-    marginTop: 40
-  }
-});
 
 export default App;

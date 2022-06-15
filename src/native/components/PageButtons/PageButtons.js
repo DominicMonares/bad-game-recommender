@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import {
   Pressable,
-  StyleSheet,
   Text,
   View
 } from 'react-native';
 
-import fetchGameData from '../../shared/services/gameData';
+import fetchGameData from '../../../shared/services/gameData';
 import LoadingWheel from '../LoadingWheel/LoadingWheel';
+import styles from './Styles';
 
 const PageButtons = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -77,36 +77,5 @@ const PageButtons = (props) => {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginBottom: 40
-  },
-  loadingContainer: {
-    width: 0,
-    height: 0
-  },
-  button: {
-    width: 40,
-  },
-  page: {
-    fontFamily: 'Share Tech',
-    fontSize: 25,
-    textAlign: 'center'
-  },
-  currentButton: {
-    backgroundColor: 'black',
-    borderRadius: 5,
-    width: 40,
-  },
-  currentPage: {
-    fontFamily: 'Share Tech',
-    fontSize: 25,
-    color: 'white',
-    textAlign: 'center',
-  }
-})
 
 export default PageButtons;
