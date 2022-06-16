@@ -41,16 +41,6 @@ const games = [
   }
 ]
 
-const game1 = {
-  id: 3046,
-  genres: ['Shooter', 'Adventure', 'Indie'],
-  name: "Day One: Garry's Incident",
-  rating: 10.0019659983726,
-  url: 'https://www.igdb.com/games/day-one-garry-s-incident',
-  cover_url: 'https://images.igdb.com/igdb/image/upload/t_cover_big/oxeeg8wve9gog5bnndrr.jpg'
-}
-
 module.exports = {
-  games: games,
-  game1: game1
+  games: games
 }
