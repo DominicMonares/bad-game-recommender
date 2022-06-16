@@ -7,11 +7,11 @@ const Game = (props) => {
 
   return (
     <div>
-      <Cover url={game.url} rating={game.rating} />
+      <Cover url={game.cover_url} rating={game.rating} />
       <a href={game.url} target="_blank">
         {game.name}
       </a>
-      <span>{game.genres.join(', ')}</span>
+      <div>{game.genres.join(', ')}</div>
     </div>
   )
 }

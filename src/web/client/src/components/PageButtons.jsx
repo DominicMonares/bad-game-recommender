@@ -18,28 +18,30 @@ const PageButtons = () => {
   }
 
   return (
-    <div>
-      <span onClick={() => previousPage(page)}>
-        {'<'}
-      </span>
-      <span onClick={() => updateDisplay(page)}>
-        {page}
-      </span>
-      <span onClick={() => updateDisplay(page + 1)}>
-        {page + 1}
-      </span>
-      <span onClick={() => updateDisplay(page + 2)}>
-        {page + 2}
-      </span>
-      <span onClick={() => updateDisplay(page + 3)}>
-        {page + 3}
-      </span>
-      <span onClick={() => updateDisplay(page + 4)}>
-        {page + 4}
-      </span>
-      <span onClick={() => updateDisplay(page + 1)}>
-        {'>'}
-      </span>
+    <div className="pb_container">
+      <div className="buttons">
+        <span onClick={() => previousPage(page)}>
+          {'<'}
+        </span>
+        <span onClick={() => updateDisplay(page)}>
+          {page}
+        </span>
+        <span onClick={() => updateDisplay(page + 1)}>
+          {page + 1}
+        </span>
+        <span onClick={() => updateDisplay(page + 2)}>
+          {page + 2}
+        </span>
+        <span onClick={() => updateDisplay(page + 3)}>
+          {page + 3}
+        </span>
+        <span onClick={() => updateDisplay(page + 4)}>
+          {page + 4}
+        </span>
+        <span onClick={() => updateDisplay(page + 1)}>
+          {'>'}
+        </span>
+      </div>
     </div>
   )
 }

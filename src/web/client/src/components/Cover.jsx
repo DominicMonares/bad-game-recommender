@@ -7,17 +7,11 @@ const Cover = (props) => {
   const rating = props.rating;
 
   return (
-    <div>
+    <div className="cover_container">
       <a href={url} target="_blank">
         <Rating rating={rating} />
-        <div>
-          <span>
-            <span>
-              <span>
-                <img src={url} />
-              </span>
-            </span>
-          </span>
+        <div className="cover">
+          <img className="cover_img" src={url} />
         </div>
       </a>
     </div>

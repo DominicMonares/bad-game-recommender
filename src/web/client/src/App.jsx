@@ -37,7 +37,9 @@ const App = () => {
   return (
     <div className="app_container">
       <img className="logo" src={logo} />
-      {games.map(g => <Game key={g.name} game={g} />)}
+      <div className="games">
+        {games.map(g => <Game key={g.name} game={g} />)}
+      </div>
       <PageButtons />
     </div>
   )
