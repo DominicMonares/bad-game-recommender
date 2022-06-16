@@ -1,4 +1,4 @@
-const games = {
+const game = {
   id: 87466,
   genres: [
     "Simulator",
@@ -11,5 +11,5 @@ const games = {
 }
 
 module.exports = {
-  games: games
+  game: game
 }
