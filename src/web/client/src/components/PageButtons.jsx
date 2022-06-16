@@ -20,27 +20,27 @@ const PageButtons = () => {
   return (
     <div className="pb_container">
       <div className="buttons">
-        <span onClick={() => previousPage(page)}>
-          {'<'}
-        </span>
-        <span onClick={() => updateDisplay(page)}>
-          {page}
-        </span>
-        <span onClick={() => updateDisplay(page + 1)}>
-          {page + 1}
-        </span>
-        <span onClick={() => updateDisplay(page + 2)}>
-          {page + 2}
-        </span>
-        <span onClick={() => updateDisplay(page + 3)}>
-          {page + 3}
-        </span>
-        <span onClick={() => updateDisplay(page + 4)}>
-          {page + 4}
-        </span>
-        <span onClick={() => updateDisplay(page + 1)}>
-          {'>'}
-        </span>
+        <div className="button" onClick={() => previousPage(page)}>
+          <span>{'<'}</span>
+        </div>
+        <div className="current_button">
+          <span>{page}</span>
+        </div>
+        <div className="button" onClick={() => updateDisplay(page + 1)}>
+          <span>{page + 1}</span>
+        </div>
+        <div className="button" onClick={() => updateDisplay(page + 2)}>
+          <span>{page + 2}</span>
+        </div>
+        <div className="button" onClick={() => updateDisplay(page + 3)}>
+          <span>{page + 3}</span>
+        </div>
+        <div className="button" onClick={() => updateDisplay(page + 4)}>
+          <span>{page + 4}</span>
+        </div>
+        <div className="button" onClick={() => updateDisplay(page + 1)}>
+          <span>{'>'}</span>
+        </div>
       </div>
     </div>
   )

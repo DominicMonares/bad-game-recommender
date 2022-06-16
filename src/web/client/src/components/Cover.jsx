@@ -4,15 +4,14 @@ import Rating from './Rating.jsx';
 
 const Cover = (props) => {
   const url = props.url;
+  const cover_url = props.cover_url;
   const rating = props.rating;
 
   return (
     <div className="cover_container">
       <a href={url} target="_blank">
         <Rating rating={rating} />
-        <div className="cover">
-          <img className="cover_img" src={url} />
-        </div>
+        <img className="cover" src={cover_url} />
       </a>
     </div>
   );

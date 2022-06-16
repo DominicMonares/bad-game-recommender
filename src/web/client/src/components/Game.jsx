@@ -6,12 +6,18 @@ const Game = (props) => {
   const game = props.game;
 
   return (
-    <div>
-      <Cover url={game.cover_url} rating={game.rating} />
-      <a href={game.url} target="_blank">
-        {game.name}
+    <div className="game_container">
+      <Cover
+        cover_url={game.cover_url}
+        url={game.url}
+        rating={game.rating}
+      />
+      <a className="title_container" href={game.url} target="_blank">
+        <span className="title">
+          {game.name}
+        </span>
       </a>
-      <div>{game.genres.join(', ')}</div>
+      <div className="genres">{game.genres.join(', ')}</div>
     </div>
   )
 }
