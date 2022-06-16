@@ -4,13 +4,20 @@
   font-family: Share Tech;
 }
 
+.loading_wheel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 422px;
+}
+
 /* Logo */
 
 .logo {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 54px;
+  margin-bottom: 44px;
   margin-top: 10px;
   width: 300px;
   height: 177px;

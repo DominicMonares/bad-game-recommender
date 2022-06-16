@@ -4,13 +4,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import { updateGames, updatePage } from '../../../../shared/actions';
 import fetchGameData from '../../../../shared/services/gameData';
 
-const PageButtons = () => {
+const PageButtons = (props) => {
+  const setLoading = props.setLoading;
   const page = useSelector(state => state.page);
   const dispatch = useDispatch();
 
   const updateDisplay = async (newPage) => {
+    setLoading(true);
     dispatch(updateGames(await fetchGameData(newPage)));
     dispatch(updatePage(newPage));
+    setLoading(false);
   }
 
   const previousPage = (page) => {
