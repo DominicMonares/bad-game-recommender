@@ -3,8 +3,8 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   container: {
     height: 50,
-    backgroundColor: '#9f2cff',
+    backgroundColor: '#5b49e3',
     borderBottomWidth: 1,
-    borderColor: '#5b49e3'
+    borderColor: '#3f32a2'
   }
 });
