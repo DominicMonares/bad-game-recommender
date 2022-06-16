@@ -125,6 +125,10 @@ a:active {
   height: 30px;
 }
 
+.button:hover {
+  cursor: pointer;
+}
+
 .current_button {
   display: flex;
   justify-content: center;
@@ -134,4 +138,8 @@ a:active {
   border-radius: 5px;
   background-color: black;
   color: white;
+}
+
+.current_button:hover {
+  cursor: default;
 }
