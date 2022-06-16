@@ -20,13 +20,13 @@ const PageButtons = (props) => {
 
   const updateDisplay = async (newPage) => {
     setModalVisible(true);
-    await dispatch(updateGames(await fetchGameData(newPage)));
+    dispatch(updateGames(await fetchGameData(newPage)));
     setModalVisible(false);
     scrollRef.current?.scrollTo({
       y: 0,
       animated: true
     });
-    await dispatch(updatePage(newPage));
+    dispatch(updatePage(newPage));
   }
 
   return (
