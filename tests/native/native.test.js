@@ -1,7 +1,9 @@
 import 'react-native';
 import React from 'react';
+import { Provider } from 'react-redux';
 import { create } from 'react-test-renderer';
-import { act, cleanup, fireEvent, render, waitFor } from '@testing-library/react-native';
+import { act, cleanup, fireEvent, render } from '@testing-library/react-native';
+import configureStore from 'redux-mock-store';
 
 import App from '../../src/native/App';
 import Header from '../../src/native/components/Header/Header';
@@ -24,6 +26,11 @@ jest.mock('../../src/shared/assets/bgr-logo.png');
 describe('Native Tests', () => {
 
   const c = 'children';
+  const mockStore = configureStore();
+  const state = {
+    page: 1,
+    games: game
+  }
 
   afterEach(() => cleanup());
 
@@ -128,7 +135,12 @@ describe('Native Tests', () => {
   });
 
   it('should render PageButtons correctly', () => {
-    const { toJSON } = render(<PageButtons page={1} />);
+    const store = mockStore(state);
+    const { toJSON } = render(
+      <Provider store={store}>
+        <PageButtons />
+      </Provider>
+    );
 
     const tree = toJSON();
     expect(tree.type).toBe('View');
