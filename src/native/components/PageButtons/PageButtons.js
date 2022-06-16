@@ -5,25 +5,28 @@ import {
   View
 } from 'react-native';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { updateGames, updatePage } from '../../../shared/actions';
+
 import fetchGameData from '../../../shared/services/gameData';
 import LoadingWheel from '../LoadingWheel/LoadingWheel';
 import styles from './Styles';
 
 const PageButtons = (props) => {
+  const page = useSelector(state => state.page);
+  const dispatch = useDispatch();
   const [modalVisible, setModalVisible] = useState(false);
-  const page = props.page;
-  const updatePage = props.updatePage;
-  const updateGames = props.updateGames;
   const scrollRef = props.scrollRef;
-  const updateDisplay = async (page) => {
+
+  const updateDisplay = async (newPage) => {
     setModalVisible(true);
-    await updateGames(await fetchGameData(page));
+    await dispatch(updateGames(await fetchGameData(newPage)));
     setModalVisible(false);
     scrollRef.current?.scrollTo({
       y: 0,
       animated: true
     });
-    updatePage(page);
+    await dispatch(updatePage(newPage));
   }
 
   return (
