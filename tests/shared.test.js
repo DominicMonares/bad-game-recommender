@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
-import fetchGameData from '../../src/shared/services/gameData';
+import fetchGameData from '../src/shared/services/gameData';
 
 import { games } from './SampleData';
 
-xdescribe('Shared', () => {
+describe('Shared', () => {
   jest.setTimeout(10000);
 
   it('should fetch game data', async () => {

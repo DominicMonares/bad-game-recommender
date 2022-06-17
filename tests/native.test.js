@@ -5,31 +5,31 @@ import { create } from 'react-test-renderer';
 import { act, cleanup, fireEvent, render } from '@testing-library/react-native';
 import configureStore from 'redux-mock-store';
 
-import App from '../../src/native/App';
-import Header from '../../src/native/components/Header/Header';
-import Game from '../../src/native/components/Game/Game';
-import Cover from '../../src/native/components/Cover/Cover';
-import Rating from '../../src/native/components/Rating/Rating';
-import PageButtons from '../../src/native/components/PageButtons/PageButtons';
+import App from '../src/native/App';
+import Header from '../src/native/components/Header/Header';
+import Game from '../src/native/components/Game/Game';
+import Cover from '../src/native/components/Cover/Cover';
+import Rating from '../src/native/components/Rating/Rating';
+import PageButtons from '../src/native/components/PageButtons/PageButtons';
 
-import * as appStyles from '../../src/native/Styles';
-import * as headerStyles from '../../src/native/components/Header/Styles';
-import * as gameStyles from '../../src/native/components/Game/Styles';
-import * as coverStyles from '../../src/native/components/Cover/Styles';
-import * as ratingStyles from '../../src/native/components/Rating/Styles';
-import * as pbStyles from '../../src/native/components/PageButtons/Styles';
+import * as appStyles from '../src/native/Styles';
+import * as headerStyles from '../src/native/components/Header/Styles';
+import * as gameStyles from '../src/native/components/Game/Styles';
+import * as coverStyles from '../src/native/components/Cover/Styles';
+import * as ratingStyles from '../src/native/components/Rating/Styles';
+import * as pbStyles from '../src/native/components/PageButtons/Styles';
 
-import { game } from '../shared/sampleData';
+import { games } from './sampleData';
 
-jest.mock('../../src/shared/assets/bgr-logo.png');
+jest.mock('../src/shared/assets/bgr-logo.png');
 
-xdescribe('Native Tests', () => {
+describe('Native Tests', () => {
 
   const c = 'children';
   const mockStore = configureStore();
   const state = {
     page: 1,
-    games: game
+    games: games
   }
 
   afterEach(() => cleanup());
@@ -59,7 +59,7 @@ xdescribe('Native Tests', () => {
   });
 
   it('should render Game correctly', () => {
-    const { toJSON } = render(<Game game={game} />);
+    const { toJSON } = render(<Game game={games[0]} />);
 
     const tree = toJSON();
     expect(tree.type).toBe('View');
@@ -74,19 +74,19 @@ xdescribe('Native Tests', () => {
     expect(title.type).toBe('View');
     expect(title.children.length).toBe(1);
     expect(title[c][0]['props']['style']).toStrictEqual(gameStyles.default.title);
-    expect(title[c][0][c][0]).toBe('STRANDED RAFT SURVIVAL 2018!');
+    expect(title[c][0][c][0]).toBe('Day One: Garry\'s Incident');
 
     const genres = tree.children[2];
     expect(genres.type).toBe('Text');
     expect(genres.children.length).toBe(1);
     expect(genres.props.style).toStrictEqual(gameStyles.default.genres);
-    expect(genres[c][0]).toBe('Simulator, Adventure');
+    expect(genres[c][0]).toBe('Shooter, Adventure, Indie');
   });
 
   it('should render Cover correctly', () => {
     const { toJSON } = render(<Cover
-      url={game.cover_url}
-      rating={game.rating}
+      url={games[0].cover_url}
+      rating={games[0]['rating']}
     />);
 
     const tree = toJSON();
@@ -120,7 +120,7 @@ xdescribe('Native Tests', () => {
   });
 
   it('should render Rating correctly', () => {
-    const { toJSON } = render(<Rating rating={game.rating} />);
+    const { toJSON } = render(<Rating rating={games[0]['rating']} />);
 
     const tree = toJSON();
     expect(tree.type).toBe('View');
@@ -131,7 +131,7 @@ xdescribe('Native Tests', () => {
     expect(rating.type).toBe('Text');
     expect(rating.children.length).toBe(1);
     expect(rating.props.style).toStrictEqual(ratingStyles.default.rating);
-    expect(rating[c][0]).toBe('20/100');
+    expect(rating[c][0]).toBe('10/100');
   });
 
   it('should render PageButtons correctly', () => {

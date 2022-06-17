@@ -29,7 +29,11 @@ const PageButtons = (props) => {
         <div className="current_button">
           <span>{page}</span>
         </div>
-        <div className="button" onClick={() => updateDisplay(page + 1)}>
+        <div
+          className="button"
+          data-testid="button"
+          onClick={() => updateDisplay(page + 1)}
+        >
           <span>{page + 1}</span>
         </div>
         <div className="button" onClick={() => updateDisplay(page + 2)}>

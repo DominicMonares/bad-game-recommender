@@ -21,9 +21,10 @@ const AppWrapper = () => {
 }
 
 const App = () => {
-  const [loading, setLoading] = useState(true);
-  const page = useSelector(state => state.page);
-  const games = useSelector(state => state.games);
+  const state = useSelector(state => state);
+  const page = state.page;
+  const games = state.games;
+  const [loading, setLoading] = useState(!games.length ? true : false);
   const dispatch = useDispatch();
 
   useEffect(() => {
