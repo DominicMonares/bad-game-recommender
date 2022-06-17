@@ -7,12 +7,14 @@
     "ios": "react-native run-ios",
     "native:start": "react-native start",
     "web:build": "webpack --watch",
-    "web:start": "npx nodemon src/web/server/index.js",
+    "web:server": "node src/web/server/index.js",
+    "web:start": "concurrently \"npm run web:build\" \"npm run web:server\"",
     "test": "jest --coverage --forceExit",
     "lint": "eslint ."
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "concurrently": "^7.2.2",
     "express": "^4.18.1",
     "path": "^0.12.7",
     "react": "17.0.2",
