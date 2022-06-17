@@ -1,5 +1,5 @@
 # Bad Game Recommender
-BGR is an application that provides bad video game fans with bad video game recommendations.
+BGR is an application that provides fans of bad video games with bad video game recommendations.
 
 ## Installation
 ### Native & Web
