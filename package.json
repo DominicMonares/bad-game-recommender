@@ -8,7 +8,7 @@
     "native:start": "react-native start",
     "web:build": "webpack --watch",
     "web:start": "npx nodemon src/web/server/index.js",
-    "test": "jest --forceExit",
+    "test": "jest --coverage --forceExit",
     "lint": "eslint ."
   },
   "dependencies": {
