@@ -1,4 +1,4 @@
-# bad-game-recommender
+# Bad Game Recommender
 BGR is an application that provides bad video game fans with bad video game recommendations.
 
 ## Installation
