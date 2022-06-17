@@ -1,7 +1,7 @@
-import { Linking, Alert } from 'react-native';
+import { Alert, Linking } from 'react-native';
 import { InAppBrowser } from 'react-native-inappbrowser-reborn';
 
-const openBrowser = async (url) => {
+const Browser = async (url) => {
   try {
     if (await InAppBrowser.isAvailable()) {
       const result = await InAppBrowser.open(url, {
@@ -30,4 +30,4 @@ const openBrowser = async (url) => {
   }
 }
 
-export default openBrowser;
+export default Browser;

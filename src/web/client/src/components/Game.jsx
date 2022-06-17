@@ -8,8 +8,8 @@ const Game = (props) => {
   return (
     <div className="game_container">
       <Cover
-        cover_url={game.cover_url}
         url={game.url}
+        cover_url={game.cover_url}
         rating={game.rating}
       />
       <a className="title_container" href={game.url} target="_blank">
@@ -19,7 +19,7 @@ const Game = (props) => {
       </a>
       <div className="genres">{game.genres.join(', ')}</div>
     </div>
-  )
+  );
 }
 
 export default Game;

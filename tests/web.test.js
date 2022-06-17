@@ -14,7 +14,7 @@ import Game from '../src/web/client/src/components/Game.jsx';
 
 import { games } from './SampleData';
 
-jest.mock('../src/shared/assets/bgr-logo.png');
+jest.mock('../src/shared/assets/logo.png');
 
 describe('Web Tests', () => {
 

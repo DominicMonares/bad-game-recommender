@@ -13,17 +13,17 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
         loader: 'babel-loader',
-        options: { presets: ['@babel/env','@babel/preset-react'] },
+        options: { presets: ['@babel/env','@babel/preset-react'] }
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: ["style-loader", "css-loader"]
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
         loader: 'file-loader',
         options: {
-          name: 'assets/logo.png',
+          name: 'assets/logo.png'
         }
       }
     ]

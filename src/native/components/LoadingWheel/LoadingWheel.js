@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { ActivityIndicator, Modal, View } from "react-native";
+import React from 'react';
+import { ActivityIndicator, Modal, View } from 'react-native';
 
 import styles from './Styles';
 
@@ -13,9 +13,7 @@ const LoadingWheel = (props) => {
         animationType="slide"
         transparent={true}
         visible={visible}
-        onRequestClose={() => {
-          toggle(!visible);
-        }}
+        onRequestClose={() => toggle(!visible)}
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>

@@ -6,7 +6,7 @@ export default StyleSheet.create({
     width: 65,
     height: 30,
     right: 0,
-    marginRight: 75,
+    marginRight: 12,
     marginTop: 12,
     zIndex: 1,
     position: 'absolute'

@@ -5,6 +5,7 @@ import styles from './Styles';
 
 const Rating = (props) => {
   const rating = props.rating;
+
   return (
     <View style={styles.container}>
       <Text style={styles.rating}>

@@ -1,29 +1,35 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  blContainer: {
+  coverContainer: {
+    width: 264,
+    height: 352,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+  bottomLeft: {
     shadowColor: 'black',
     shadowOffset: {width: -4, height: 4},
     shadowOpacity: 0.4,
-    shadowRadius: 3,
+    shadowRadius: 3
   },
-  brContainer: {
+  bottomRight: {
     shadowColor: 'black',
     shadowOffset: {width: 4, height: 4},
     shadowOpacity: 0.4,
-    shadowRadius: 3,
+    shadowRadius: 3
   },
-  tlContainer: {
+  topLeft: {
     shadowColor: 'black',
     shadowOffset: {width: -4, height: -4},
     shadowOpacity: 0.4,
-    shadowRadius: 3,
+    shadowRadius: 3
   },
-  trContainer: {
+  topRight: {
     shadowColor: 'black',
     shadowOffset: {width: 4, height: -4},
     shadowOpacity: 0.4,
-    shadowRadius: 3,
+    shadowRadius: 3
   },
   cover: {
     resizeMode: 'contain',

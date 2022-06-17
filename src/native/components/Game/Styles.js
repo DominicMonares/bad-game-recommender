@@ -4,12 +4,18 @@ export default StyleSheet.create({
   container: {
     marginBottom: 50
   },
+  title_container: {
+    width: 264,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
   title: {
     fontFamily: 'Share Tech',
-    textDecorationLine: 'underline',
     fontSize: 25,
     textAlign: 'center',
-    marginTop: 15
+    marginBottom: 5,
+    marginTop: 15,
+    textDecorationLine: 'underline'
   },
   genres: {
     fontFamily: 'Share Tech',

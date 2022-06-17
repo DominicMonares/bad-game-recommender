@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { updateGames, updatePage } from '../../../../shared/actions';
-import fetchGameData from '../../../../shared/services/gameData';
+import getGameData from '../../../../shared/services/gameData';
 
 const PageButtons = (props) => {
   const setLoading = props.setLoading;
@@ -11,7 +11,7 @@ const PageButtons = (props) => {
 
   const updateDisplay = async (newPage) => {
     setLoading(true);
-    dispatch(updateGames(await fetchGameData(newPage)));
+    dispatch(updateGames(await getGameData(newPage)));
     dispatch(updatePage(newPage));
     setLoading(false);
   }
@@ -29,11 +29,7 @@ const PageButtons = (props) => {
         <div className="current_button">
           <span>{page}</span>
         </div>
-        <div
-          className="button"
-          data-testid="button"
-          onClick={() => updateDisplay(page + 1)}
-        >
+        <div className="button" onClick={() => updateDisplay(page + 1)}>
           <span>{page + 1}</span>
         </div>
         <div className="button" onClick={() => updateDisplay(page + 2)}>
@@ -50,7 +46,7 @@ const PageButtons = (props) => {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default PageButtons;

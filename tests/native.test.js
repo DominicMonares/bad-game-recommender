@@ -21,7 +21,7 @@ import * as pbStyles from '../src/native/components/PageButtons/Styles';
 
 import { games } from './sampleData';
 
-jest.mock('../src/shared/assets/bgr-logo.png');
+jest.mock('../src/shared/assets/logo.png');
 
 describe('Native Tests', () => {
 
@@ -96,22 +96,22 @@ describe('Native Tests', () => {
     const coverBL = tree[c][1];
     expect(coverBL.type).toBe('View');
     expect(coverBL.children.length).toBe(1);
-    expect(coverBL.props.style).toStrictEqual(coverStyles.default.blContainer);
+    expect(coverBL.props.style).toStrictEqual(coverStyles.default.bottomLeft);
 
     const coverBR = coverBL[c][0];
     expect(coverBR.type).toBe('View');
     expect(coverBR.children.length).toBe(1);
-    expect(coverBR.props.style).toStrictEqual(coverStyles.default.brContainer);
+    expect(coverBR.props.style).toStrictEqual(coverStyles.default.bottomRight);
 
     const coverTL = coverBR[c][0];
     expect(coverTL.type).toBe('View');
     expect(coverTL.children.length).toBe(1);
-    expect(coverTL.props.style).toStrictEqual(coverStyles.default.tlContainer);
+    expect(coverTL.props.style).toStrictEqual(coverStyles.default.topLeft);
 
     const coverTR = coverTL[c][0];
     expect(coverTR.type).toBe('View');
     expect(coverTR.children.length).toBe(1);
-    expect(coverTR.props.style).toStrictEqual(coverStyles.default.trContainer);
+    expect(coverTR.props.style).toStrictEqual(coverStyles.default.topRight);
 
     const cover = coverTR[c][0];
     expect(cover.type).toBe('Image');

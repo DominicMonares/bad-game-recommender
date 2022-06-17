@@ -1,14 +1,14 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
+  loadingContainer: {
+    width: 0,
+    height: 0
+  },
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     marginBottom: 40
-  },
-  loadingContainer: {
-    width: 0,
-    height: 0
   },
   button: {
     width: 40,
