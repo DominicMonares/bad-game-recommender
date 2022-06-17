@@ -40,7 +40,7 @@ const App = () => {
   let currentDisplay;
   if (loading) {
     currentDisplay = (
-      <div className="loading_wheel">
+      <div className="loading_wheel" data-testid="lw">
         <TailSpin color="#5b49e3" height={80} width={80} />
       </div>
     );
@@ -54,7 +54,7 @@ const App = () => {
 
   return (
     <div>
-      <img className="logo" src={logo} />
+      <img className="logo" src={logo} data-testid="logo" />
       {currentDisplay}
       <PageButtons setLoading={setLoading} />
     </div>

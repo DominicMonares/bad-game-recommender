@@ -11,7 +11,11 @@ const Cover = (props) => {
     <div className="cover_container">
       <a href={url} target="_blank">
         <Rating rating={rating} />
-        <img className="cover" src={cover_url} />
+        <img
+          className="cover"
+          src={cover_url}
+          data-testid="cover"
+        />
       </a>
     </div>
   );
