@@ -19,11 +19,11 @@ import * as coverStyles from '../../src/native/components/Cover/Styles';
 import * as ratingStyles from '../../src/native/components/Rating/Styles';
 import * as pbStyles from '../../src/native/components/PageButtons/Styles';
 
-import { game } from './sampleData';
+import { game } from '../shared/sampleData';
 
 jest.mock('../../src/shared/assets/bgr-logo.png');
 
-describe('Native Tests', () => {
+xdescribe('Native Tests', () => {
 
   const c = 'children';
   const mockStore = configureStore();
