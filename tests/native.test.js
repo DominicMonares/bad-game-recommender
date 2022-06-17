@@ -30,7 +30,7 @@ describe('Native Tests', () => {
   const state = {
     page: 1,
     games: games
-  }
+  };
 
   afterEach(() => cleanup());
 
@@ -84,16 +84,27 @@ describe('Native Tests', () => {
   });
 
   it('should render Cover correctly', () => {
-    const { toJSON } = render(<Cover
-      url={games[0].cover_url}
-      rating={games[0]['rating']}
-    />);
+    const { toJSON } = render(
+      <Cover
+        url={games[0].cover_url}
+        rating={games[0]['rating']}
+      />
+    );
 
     const tree = toJSON();
     expect(tree.type).toBe('View');
-    expect(tree.children.length).toBe(2);
+    expect(tree.children.length).toBe(1);
+    expect(tree.props.style).toStrictEqual(coverStyles.default.coverContainer);
 
-    const coverBL = tree[c][1];
+    const pressable = tree[c][0];
+    expect(pressable.type).toBe('View');
+    expect(pressable.children.length).toBe(2);
+
+    const rating = pressable[c][0];
+    expect(rating.children.length).toBe(1);
+    expect(rating.props.style).toStrictEqual(ratingStyles.default.container);
+
+    const coverBL = pressable[c][1];
     expect(coverBL.type).toBe('View');
     expect(coverBL.children.length).toBe(1);
     expect(coverBL.props.style).toStrictEqual(coverStyles.default.bottomLeft);
