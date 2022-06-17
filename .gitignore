@@ -66,3 +66,6 @@ src/web/client/dist/assets
 
 # Testing
 coverage
+
+# Deployment
+*.pem
