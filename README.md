@@ -7,7 +7,7 @@ BGR is an application that provides bad video game fans with bad video game reco
 npm install
 ```
 
-### Native
+### Native (from root directory)
 ```
 cd ios
 pod install
