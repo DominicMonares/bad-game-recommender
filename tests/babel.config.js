@@ -1,3 +1,5 @@
+// only used for testing purposes
+// tests won't run unless this is in root
 module.exports = {
   "presets": [
     '@babel/preset-env',
