@@ -2,7 +2,6 @@
 BGR is an application that provides fans of bad video games with bad video game recommendations.
 
 ## Installation
-### Native & Web
 ```
 npm install
 npx pod-install
