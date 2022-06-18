@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "metro": "react-native start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "native:start": "react-native start",
+    "native:start": "concurrently \"npm run metro\" \"npm run ios\"",
     "web:build": "webpack --watch",
     "web:server": "node src/web/server/index.js",
     "web:start": "concurrently \"npm run web:build\" \"npm run web:server\"",
