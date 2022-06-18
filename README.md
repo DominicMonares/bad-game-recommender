@@ -5,12 +5,7 @@ BGR is an application that provides fans of bad video games with bad video game 
 ### Native & Web
 ```
 npm install
-```
-
-### Native (from root directory)
-```
-cd ios
-pod install
+npx pod-install
 ```
 
 ## Proxy Server
