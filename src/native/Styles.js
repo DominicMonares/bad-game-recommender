@@ -13,5 +13,12 @@ export default StyleSheet.create({
     marginRight: 'auto',
     marginBottom: 44,
     marginTop: 40
+  },
+  loadingWheel: {
+    flex: 1,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginBottom: 250,
+    marginTop: 250
   }
 });
