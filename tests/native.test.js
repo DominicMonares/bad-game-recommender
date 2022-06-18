@@ -243,14 +243,14 @@ describe('Native Tests', () => {
   it('should render the loading wheel when a new page is selected', async () => {
     const { getByTestId, toJSON } = render(<App />);
 
-    const loadingWheelBefore = toJSON()[c][1][c][0][c][1][c][0][c][0][c][0];
+    const loadingWheelBefore = toJSON()[c][1][c][0][c][2][c][0][c][0][c][0];
     expect(loadingWheelBefore.props.visible).toBe(false);
 
     act(() => {
       fireEvent.press(getByTestId('page_5'));
     });
 
-    const loadingWheelAfter = toJSON()[c][1][c][0][c][1][c][0][c][0][c][0];
+    const loadingWheelAfter = toJSON()[c][1][c][0][c][2][c][0][c][0][c][0];
     expect(loadingWheelAfter.props.visible).toBe(true);
   });
 
