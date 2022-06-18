@@ -16,7 +16,6 @@ This app gets its data from the IGDB API, run through a proxy server that can be
 ### Native
 ```
 npm run native:start
-npm run ios
 ```
 
 ### Web
