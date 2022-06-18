@@ -30,3 +30,5 @@ Due to the strict rate limit imposed by IGDB, there is an intentional 2 second d
 
 ## Sister Repo
 This app gets its data from the IGDB API, run through a proxy server that can be found here: [BGR Proxy](https://github.com/DominicMonares/bgr-proxy)
+
+**The proxy is currently deployed and setup is not required for this app to work**
