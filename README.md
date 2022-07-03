@@ -3,8 +3,6 @@ BGR is an application that provides fans of bad video games with bad video game 
 
 This app gets its data from the [IGDB API](https://api-docs.igdb.com/#about), run through a proxy server that can be found here: [BGR Proxy](https://github.com/DominicMonares/bgr-proxy)
 
-***The proxy server is currently deployed and setup is not required for this app to work***
-
 ## Installation
 ```
 npm install
